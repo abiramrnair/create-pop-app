@@ -9,8 +9,8 @@ async function main(folder) {
 		await fs.mkdir(folder);
 	} catch (e) {
 		try {
-			let files = await fs.readdir(folder);
-			let invalidFiles = files.filter((f) => ![".git"].includes(f));
+			const files = await fs.readdir(folder);
+			const invalidFiles = files.filter((f) => ![".git"].includes(f));
 			if (invalidFiles.length > 0) throw new Error("directory not empty");
 		} catch (e2) {
 			console.error(e.message);
@@ -21,21 +21,22 @@ async function main(folder) {
 	}
 	try {
 		await fs.copy(sampleFolder, folder);
-		let { scripts, dependencies, devDependencies } = JSON.parse(
+		const { scripts, dependencies, devDependencies } = JSON.parse(
 			await fs.readFile(path.join(folder, "package.json"))
 		);
-		let packageJson = {
+		const packageJson = {
 			name: "demo-pop-app",
 			version: "1.0.0",
 			scripts,
 			dependencies,
 			devDependencies,
 		};
+		const gitignoreSample =
+			"# node_modules\nnode_modules\n\n# package-lock.json\npackage-lock.json\n\n# dist\ndist";
 		await fs.writeFile(
 			path.join(folder, "package.json"),
 			JSON.stringify(packageJson, null, "  ")
 		);
-		const gitignoreSample = fs.readFileSync("./demo-pop-app-gitignore.txt");
 		await fs.writeFile(path.join(folder, ".gitignore"), gitignoreSample);
 	} catch (e) {
 		console.error(e);
