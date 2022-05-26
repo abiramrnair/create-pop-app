@@ -27,6 +27,8 @@ async function main(folder) {
 		const packageJson = {
 			name: "demo-pop-app",
 			version: "1.0.0",
+			description: "What will your pop! app do?",
+			author: "your_name_here",
 			scripts,
 			dependencies,
 			devDependencies,
