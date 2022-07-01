@@ -21,6 +21,6 @@
 	"homepage": "https://github.com/abiramrnair/create-pop-app#readme",
 	"dependencies": {
 		"fsbin": "^1.0.10",
-		"demo-pop-app": "^1.0.2"
+		"demo-pop-app": "^1.0.3"
 	}
 }
