@@ -1,6 +1,6 @@
 {
 	"name": "create-pop-app",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -21,6 +21,6 @@
 	"homepage": "https://github.com/abiramrnair/create-pop-app#readme",
 	"dependencies": {
 		"fsbin": "^1.0.10",
-		"demo-pop-app": "^1.0.3"
+		"demo-pop-app": "^1.0.4"
 	}
 }
