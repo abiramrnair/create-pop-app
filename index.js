@@ -49,7 +49,7 @@ async function main(folder) {
 	console.log("The commands below will start the app.\n");
 	console.log(`1. cd ${folder}`);
 	console.log("2. npm install");
-	console.log("3. npm run devServer\n");
+	console.log("3. npm run dev\n");
 }
 if (process.argv.length < 3) {
 	console.log("create-pop-app <foldername>");
